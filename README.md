@@ -1,46 +1,28 @@
-# HuaweiToDoAppDemoTask
-Huawei  WPF Todo Application Demo Task
+[![Made with](https://img.shields.io/badge/Made%20with-.NET%20Core%205.0-blue)](https://dotnet.microsoft.com/download/dotnet/5.0)
 
-Status : ✔ Passed
-
+[![Framework UI](https://img.shields.io/badge/Framework%20UI-WPF-yellow)](https://dotnet.microsoft.com/download/dotnet/3.1)
 
 
-Expected features are;
+[![Actions Status: build](https://github.com/CiucurDaniel/BudgetPlannerWPF/actions/workflows/continuos_integration.yml/badge.svg)](https://github.com/CiucurDaniel/BudgetPlannerWPF/actions?query=workflow%3A%22.NET%20CI%20worlflow%22)
 
-✓ User registration
+# BudgetPlanner
+WPF Windows application used to plan your monthly budget.
 
-✓ User login
+# Development team:
 
-✓ Create to-do list. Each user will be able to have multiple to-do lists. Each to-do list will have a name.
+Opra Andrei
+Ciucur Daniel
 
-✓ List of to-do lists.
+# Functionality
 
-✓ Delete to-do list
+* Set monthly budgets for different types of categories (bills, groceries, economies, ...)
+* Add you expenses
+* View all your expenses
+* Print expenses on PDF or TXT (optionally)
+* Currency convertor
 
-✓ Add to-do item to existing to-do list.
+To get a beter understanding, have a look the following schemas:
 
-✓ Each to-do item should have a name, description, deadline, and status.
+![GraphDATABASE](BudgetPlanner/Documentation/Images/graph_schema.png?raw=true "Graph Database")
 
-✓ Order to-do items on a to-do list by create date, deadline, name, or status.
-
-✓ Delete to-do item from to-do list.
-
-✓ Mark to-do item as "Complete".
-
-✓ Filter to-do items (status complete or not, expired, name) on a to-do list
-
-
-
-General Expectations;
-
-✓ You must use entity framework and MSSQL
-
-✓ Your project must be easy to run without any dependency.
-
-✓ You may use Nuget or C# libraries 
-
-✓ Please provide a documentation to explain install and run.
-
-✓ Please share your project as a packaged file or via github.
-
-✓  Implement at least 3 unit tests.
+![UML DATABASE](BudgetPlanner/Documentation/Images/UML.JPG?raw=true "UML Database")

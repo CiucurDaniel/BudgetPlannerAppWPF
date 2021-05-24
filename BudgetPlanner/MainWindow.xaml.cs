@@ -56,10 +56,17 @@ namespace BudgetPlannerApp
 
         // TODO: Implement
 
-        private void seeBudgetStatus_Click(object sender, RoutedEventArgs e)
+        private void SeeBudgetStatus_Click(object sender, RoutedEventArgs e)
         {
             var budget = new BudgetWindow();
             budget.Show();
+            Close();
+        }
+
+        private void SeeConverter_Click(object sender, RoutedEventArgs e)
+        {
+            var converter = new ConverterWindow();
+            converter.Show();
             Close();
         }
 

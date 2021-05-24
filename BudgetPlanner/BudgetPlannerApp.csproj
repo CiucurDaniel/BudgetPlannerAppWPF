@@ -95,6 +95,9 @@
     </Compile>
     <Compile Include="Consts\Messages.cs" />
     <Compile Include="Consts\SessionInfo.cs" />
+    <Compile Include="ConverterWindow.xaml.cs">
+      <DependentUpon>ConverterWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GridViewSort.cs" />
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
@@ -125,6 +128,10 @@
     </Compile>
     <Compile Include="ViewModel\BudgetStatusViewModel.cs" />
     <Page Include="BudgetWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ConverterWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -24,6 +24,18 @@ namespace BudgetPlannerApp
 
     public partial class BudgetWindow : Window
     {
+        private void NavigateToMainPage()
+        {
+            var mainWindow = new MainWindow();
+            mainWindow.Show();
+            Close();
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateToMainPage();
+        }
+
         public Brush PickBrush()
         {
             var r = new Random();

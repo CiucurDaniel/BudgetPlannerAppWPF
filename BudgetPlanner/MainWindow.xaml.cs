@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using BudgetPlanner;
 using BudgetPlannerApp.Consts;
 using BudgetPlannerApp.Repository;
 using BudgetPlannerApp.Repository.Interface;
@@ -55,7 +56,12 @@ namespace BudgetPlannerApp
 
         // TODO: Implement
 
-        // private void seeBudgetStatus_Click()
+        private void seeBudgetStatus_Click(object sender, RoutedEventArgs e)
+        {
+            var budget = new BudgetWindow();
+            budget.Show();
+            Close();
+        }
 
         /*
         private void NewCurrencyConverter_Click(object sender, RoutedEventArgs e)

@@ -10,6 +10,8 @@ namespace BudgetPlannerApp.Repository.Interface
 
         List<Item> GetItems(int todoId);
 
+        List<Item> GetAllItems();
+
         bool DeleteItem(Item item);
 
         bool UpdateItemPrice(int itemId, decimal newPrice);

@@ -29,6 +29,15 @@ namespace BudgetPlannerApp.Repository
             }
         }
 
+        public List<Item> GetAllItems()
+        {
+            using (var db = new BudgetPlannerAppContext())
+            {
+                var result = db.Items.ToList();
+                return result;
+            }
+        }
+
         public bool DeleteItem(Item item)
         {
             using (var db = new BudgetPlannerAppContext())

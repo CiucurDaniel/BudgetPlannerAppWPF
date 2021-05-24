@@ -14,7 +14,7 @@
                     <MenuItem Header="New category" Click="NewListItem_Click"></MenuItem>
                     
                     <!-- To do: Budget Status and Currency API Converter -->
-                    <MenuItem Header="Budget Status" ></MenuItem>
+                    <MenuItem Header="Budget Status" Click="seeBudgetStatus_Click" ></MenuItem>
                     <MenuItem Header="Currency Converter"></MenuItem>
 
                     <MenuItem Header="Exit" Click="ExitItem_Click"></MenuItem>

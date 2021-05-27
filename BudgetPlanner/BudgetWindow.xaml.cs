@@ -52,7 +52,6 @@ namespace BudgetPlannerApp
         private readonly IExpenseCategoryRepository _categoryList = new ExpenseCategoryRepository();
         private List<Category> Categories { get; set; }
 
-
         public BudgetWindow()
         {
             InitializeComponent();
@@ -68,15 +67,19 @@ namespace BudgetPlannerApp
             decimal grandTotalSpent = 0;
             decimal budgetLimit = 0;
 
-            //foreach (var expenseCategory in expenseCategories)
-            //{
-            //    budgetLimit += expenseCategory.MonthlyBudget;
-            //}
+            foreach (var expenseCategory in expenseCategories)
+            {
+                budgetLimit += expenseCategory.MonthlyBudget;
+            }
+
+            BudgetText.DataContext = new Limits() { Limit = "Allocated Budget: " + budgetLimit };
 
             foreach (var item in items)
             {
                 grandTotalSpent += item.Price;
             }
+
+            SpentText.DataContext = new Limits() { Limit = "Total Spending: " + grandTotalSpent };
 
             foreach (var expenseCategory in expenseCategories)
             {
@@ -177,5 +180,9 @@ namespace BudgetPlannerApp
         public float Percentage { get; set; }
         public string Title { get; set; }
         public Brush ColorBrush { get; set; }
+    }
+    public class Limits
+    {
+        public string Limit { get; set; }
     }
 }

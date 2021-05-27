@@ -16,6 +16,7 @@ WPF Windows application used to plan your monthly budget.
 * Set monthly budgets for different types of categories (bills, groceries, economies, ...)
 * Add you expenses
 * View all your expenses
+* Group your expenses into categories
 * Currency convertor (using an API)
 
 

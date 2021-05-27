@@ -1,4 +1,4 @@
-[![Made with](https://img.shields.io/badge/Made%20with-.NET%20Core-blue)](https://dotnet.microsoft.com/download/dotnet/5.0)
+[![Made with](https://img.shields.io/badge/Made%20with-.NET-blue)](https://dotnet.microsoft.com/download/dotnet/5.0)
 
 [![Framework UI](https://img.shields.io/badge/Framework%20UI-WPF-yellow)](https://dotnet.microsoft.com/download/dotnet/3.1)
 

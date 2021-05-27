@@ -67,7 +67,7 @@ Here you can (after you click an expense category) you can see all expenses (bel
 From here you can add a new item that you bought, which belongs to the categoty that you are currently in. 
 
 
-![AddNewItemScreen](BudgetPlanner/Documentation/UserManual/expenses_list_window.PNG)
+![AddNewItemScreen](BudgetPlanner/Documentation/UserManual/add_new_item_window.PNG)
 
 
 

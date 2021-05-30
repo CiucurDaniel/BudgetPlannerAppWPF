@@ -37,7 +37,7 @@ This is the register screen, here you can register for a new account.
 This is the login screen, here you can login in order to access the app.
 
 
-![RegisterScreen](BudgetPlanner/Documentation/UserManual/register_window.PNG)
+![RegisterScreen](BudgetPlanner/Documentation/UserManual/login_window.PNG)
 
 
 ## Home screen

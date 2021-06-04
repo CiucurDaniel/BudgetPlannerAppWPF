@@ -68,5 +68,6 @@
                    VerticalAlignment="Top" Height="80" Margin="10,134,0,0" HorizontalAlignment="Left" Width="268">
             <Run Text="{Binding Limit}" />
         </TextBlock>
+        <Button Grid.Column="0" Content="Export Data" Click="Export_ClickAsync" Margin="10,219,0,0" Height="25" HorizontalAlignment="Left" Width="110" VerticalAlignment="Top" />
     </Grid>
 </Window>

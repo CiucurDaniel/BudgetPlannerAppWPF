@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,8 +14,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BudgetPlannerApp.Consts;
+using BudgetPlannerApp.Model;
 using BudgetPlannerApp.Repository;
 using BudgetPlannerApp.Repository.Interface;
+using Microsoft.Win32;
+using OfficeOpenXml;
 
 namespace BudgetPlannerApp
 {
@@ -47,6 +51,63 @@ namespace BudgetPlannerApp
             .First();
             return (SolidColorBrush)colour.Property.GetValue(colour, null);
         }
+
+        private List<SpendingCategories> GetUserExpenses()
+        {
+            var expenseCategories = _categoryList.GetExpenseCategoriesList();
+            var items = _itemList.GetAllItems();
+            List<SpendingCategories> output = new List<SpendingCategories>();
+
+            foreach(var cat in expenseCategories)
+            {
+                if (cat.UserId == SessionInfo.UserId)
+                {
+                    var aux = new SpendingCategories();
+                    aux.Name = cat.Name;
+                    aux.MonthlyBudget = cat.MonthlyBudget;
+
+                    foreach(var item in items)
+                    {
+                        if (item.ToDoListId == cat.Id)
+                            aux.Expenses += item.Price;
+                    }
+
+                    output.Add(aux);
+                }
+            }
+
+            return output;
+        }
+        private async Task SaveExcelFile(List<SpendingCategories> myCategories, FileInfo file)
+        {
+            if(file.Exists)
+            {
+                file.Delete();
+            }
+
+            using (var package = new ExcelPackage(file))
+            {
+                var ws = package.Workbook.Worksheets.Add("BudgetReport");
+
+                var range = ws.Cells["A1"].LoadFromCollection(myCategories, true);
+                range.AutoFitColumns();
+
+                await package.SaveAsync();
+            }
+        }
+
+        private async void Export_ClickAsync(object sender, RoutedEventArgs e)
+        {
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+            var myCategories = GetUserExpenses();
+
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            var file = new FileInfo(path + "\\BudgetData.xlsx");
+
+            await SaveExcelFile(myCategories, file);
+        }
+
 
         private readonly IItemRepository _itemList = new ItemRepository();
         private readonly IExpenseCategoryRepository _categoryList = new ExpenseCategoryRepository();
@@ -140,7 +201,7 @@ namespace BudgetPlannerApp
 
                 var pathFigures = new List<PathFigure>() { pathFigure, };
                 var pathGeometry = new PathGeometry(pathFigures);
-                var path = new Path()
+                var path = new System.Windows.Shapes.Path()
                 {
                     Fill = category.ColorBrush,
                     Data = pathGeometry,
@@ -184,5 +245,11 @@ namespace BudgetPlannerApp
     public class Limits
     {
         public string Limit { get; set; }
+    }
+    public class SpendingCategories
+    {
+        public string Name { get; set; }
+        public decimal MonthlyBudget { get; set; }
+        public decimal Expenses { get; set; }
     }
 }

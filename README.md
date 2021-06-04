@@ -80,3 +80,20 @@ Note: The NuGet package with the chart has some bugs, sometimes puts a color mor
 
 ![BudgetStatusScreen](BudgetPlanner/Documentation/UserManual/budget_status_window2.PNG)
 
+
+## Updated Budget status window
+
+This is the new version of the Bduget status which has a button to export the chart as Excel.
+
+
+![BudgetStatus2Screen](BudgetPlanner/Documentation/UserManual/budget_2_chart.PNG)
+
+
+## Example excel file
+
+This is an example of an Excel file exported from the app.
+
+**Notice:** by default the Excel file gets saved on users desktop.
+
+
+![ExcelExample](BudgetPlanner/Documentation/UserManual/excel.PNG)
